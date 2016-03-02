@@ -40,7 +40,7 @@ function leftSwipe(callback,divClass){
 
 function rightSwipe(callback,divClass){
   var currentIndex = pageOrder.indexOf(route);
-  $("body").on("swipeleft",function(){
+  $("body").on("swiperight",function(){
     //alert("You swiped left!");
     console.log('you swiped right!')
     if(currentIndex !== 2){
