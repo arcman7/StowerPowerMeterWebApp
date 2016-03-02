@@ -1,7 +1,12 @@
 class WelcomeController < ApplicationController
   require 'json'
 
-  def index
+  def stats
+  end
 
+  def store
+  end
+
+  def drainage
   end
 end
