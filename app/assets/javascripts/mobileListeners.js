@@ -33,7 +33,8 @@ function leftSwipe(callback,divClass){
     console.log('you swiped left!')
     if(currentIndex !== 0){
         var nextUrl = protocol + '//' + domain + '/' + pageOrder[currentIndex-1];
-        window.location.replace(nexUrl);
+        $('body').html('')
+        window.location.href =(nexUrl);
     }
   });
 }
@@ -45,7 +46,8 @@ function rightSwipe(callback,divClass){
     console.log('you swiped right!')
     if(currentIndex !== 2){
         var nextUrl = protocol + '//' + domain + '/' + pageOrder[currentIndex+1];
-        window.location.replace(nexUrl);
+        $('body').html('')
+        window.location.href =(nexUrl);
     }
   });
 }
