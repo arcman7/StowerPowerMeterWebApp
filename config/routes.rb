@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get "/drainage" => "welcome#drainage"
 
 
+  get "/drainage" => "welcome#drainage"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
