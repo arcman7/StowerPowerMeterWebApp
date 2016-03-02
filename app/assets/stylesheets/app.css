@@ -7,6 +7,15 @@
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
+ .navbar-nav {
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+  .navbar-nav li {
+      float: none;
+      display: inline-block;
+    }
 
 .page-header{
     text-align: center;
