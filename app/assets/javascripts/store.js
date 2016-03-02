@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-  this.onClick = function(){
+  var titles = document.getElements
+  var onClick = function(){
+
     bootbox.alert("Hello world!", function() {
     });
   }
