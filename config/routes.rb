@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   get "/stats" => "welcome#stats"
   get "/drainage" => "welcome#drainage"
 
-
-  get "/drainage" => "welcome#drainage"
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
