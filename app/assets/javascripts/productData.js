@@ -21,7 +21,10 @@ var soloarProducts = [["1","http://ecx.images-amazon.com/images/I/41sIHAuv8mL._S
 
 $(document).on('ready',function(){
   console.log('ready')
-  buildlistItems();
+  if (window.location.href.split('/')[3] === 'store'){
+      buildlistItems();
+
+  }
 });
 
 function buildlistItems(){
