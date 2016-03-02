@@ -19,3 +19,20 @@ var soloarProducts = [["1","http://ecx.images-amazon.com/images/I/41sIHAuv8mL._S
 ["19","http://ecx.images-amazon.com/images/I/41D9uGXL1TL._SL160_SL150_.jpg","EasyAcc-15000mAh-External-Brilliant-Smartphones","4.6","99.99"],
 ["20","http://ecx.images-amazon.com/images/I/51kOdCF7iFL._SL160_SL150_.jpg","Danibos-Solar-Power-Garden-Fountain","3.8","26.98"]];
 
+$(document).on('ready',function(){
+  console.log('ready')
+  buildlistItems();
+});
+
+function buildlistItems(){
+  soloarProducts.forEach(function (itemArr){
+    var options = {rank: itemArr[0], imageUrl: itemArr[1], title: itemArr[2], rating: itemArr[3], price: itemArr[4]};
+    buildDiv(options);
+  }); //end forEach
+}
+
+function buildDiv(options){
+  //console.log(options.imageUrl)
+ var div = '<div class="row"><div class="col-sm-12 col-lg-12 col-md-12 tap"><div class="thumbnail"><img src="'+options.imageUrl+'" alt=""><div class="caption"><h4><a class="product-title" onclick="onClick()" href="#">'+options.title+'</a><h4 class="pull-left">$'+options.price+'</h4></h4></div></div></div></div>';
+ $('.container').append(div);
+}
