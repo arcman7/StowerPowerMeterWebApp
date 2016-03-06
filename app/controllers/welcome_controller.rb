@@ -9,4 +9,8 @@ class WelcomeController < ApplicationController
 
   def drainage
   end
+
+  def private_plane
+
+  end
 end

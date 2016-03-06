@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "/store" => "welcome#store"
   get "/stats" => "welcome#stats"
   get "/drainage" => "welcome#drainage"
+  get "/private_plane" => "welcome#private_plane"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

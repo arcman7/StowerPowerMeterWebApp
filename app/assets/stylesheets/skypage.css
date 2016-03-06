@@ -1,0 +1,41 @@
+.sky-header{
+  background-color: #363636;
+}
+
+.sky-body{
+  background-image: url("http://wallpincuk.com/wp-content/uploads/2016/02/Sky-Wallpaper-Desktop-Dfjot.jpg");
+}
+
+a.sky-header.focus{
+  color: #ffffff;
+}
+
+#sky-header-name{
+  color: #E8E8E8  ;
+}
+
+#sky-header-pricing{
+  color: #C8C8C8  ;
+}
+#sky-header-photos{
+  color: #C8C8C8  ;
+}
+#sky-header-contact{
+  color: #C8C8C8  ;
+}
+
+
+#sky-header-pricing:hover, #sky-header-photos:hover, #sky-header-contact:hover{
+  color: #BCD9FF  ;
+}
+/*7f8385* lighter font in header */
+#sky-tab{
+  /*margin-left: 15%;
+  margin-right: 15%;*/
+  width: 100%;
+  background-color: #fcfcfc;
+  padding: 3px;
+  color: #777474;
+  margin-top:15%;
+}
+

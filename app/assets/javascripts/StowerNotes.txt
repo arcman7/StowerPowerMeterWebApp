@@ -1,0 +1,17 @@
+Take a measurement of the signal strength - (fake it for now)
+
+Take into account the phone model to get mAH (assume its a new phone, and assume iphone6)
+
+Now we can make calculations as to how long of each service type the phone can support
+ - user inputs those times
+ ex:
+
+ Talk: 50 min
+ Camerera: 30min
+ GPS: 2 hrs
+ music: 3 hrs
+
+ => Okay you need 80% phone charge
+
+ => if greater than 100%, popup suggesting you check out the market place
+
