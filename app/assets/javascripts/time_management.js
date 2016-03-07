@@ -39,21 +39,48 @@ function timeTable(batteryLevel){
     return timeTable;
 }
 
-function htmlTimeTable(app,timeLeft){
-    var strVar="";
-    strVar += "     <li class=\"list-group-item time-left-group\">";
-    strVar += "          <img class=\"pull-left\" src=\"https:\/\/weighmytruck.com\/img\/icon-app.png\">";
-    strVar += "          "+app;
-    strVar += "          <strong class=\"pull-right\" style='color:"+urgency(timeLeft)+"'>"+timeLeft+" minutes<\/strong>";
-    strVar += "     <\/li>";
-    return strVar;
+
+function afTable(){
+    var table = {};
+    table["Internet on Wifi"] = "fa fa-wifi";
+    table["Talk Time"]        = "fa fa-phone";
+    table['Video playback']   = "fa fa-play";
+    table['YouTube']          = "fa fa-play-circle";
+    table['Audio playback']   = "fa fa-music";
+    table['Reading']          = "fa fa-book";
+    table['2D gaming']        = "fa fa-gamepad";
+    table['3D gaming']        = "fa fa-gamepad";
+    table['Photo Taking']     = "fa fa-camera";
+    table['Video Recording']  = "fa fa-video-camera";
+    table['GPS Navigation']   = "fa fa-location-arrow";
+    table['Facetime']         = "fa fa-users";
+    table['Flashlight']       = "fa fa-lightbulb-o";
+    table['Standby']          = "fa fa-power-off";
+
+    return table;
 }
 
-function buildTimeList(container){
-   var table = timeTable(55); //arbitrarily chosing 85% battery level
-   for(key in table){
-     container.append(htmlTimeTable(key,table[key]));
-   }
+function htmlTimeTable(app,timeLeft){
+   var iconTable = afTable();
+   var iconClass = iconTable[app];
+   var strVar="";
+   strVar += "     <li class=\"list-group-item time-left-item\">";
+   strVar += "          <i class='pull-left "+iconClass+"' ></i>";
+   strVar += "          <strong class=\"pull-right\" style='color:"+urgency(timeLeft)+"'>"+timeLeft+" minutes<\/strong>";
+   strVar += "     <\/li>";
+   return strVar;
+}
+
+function htmlTimeTableHour(app,timeLeft,minutes){
+   var iconTable = afTable();
+   var iconClass = iconTable[app];
+   var strVar="";
+   strVar += "     <li class=\"list-group-item time-left-item\">";
+   strVar += "          <i class='pull-left "+iconClass+"' ></i>";
+   strVar += "          "+app;
+   strVar += "          <strong class=\"pull-right\" style='color:"+urgency(minutes)+"'>"+timeLeft+" hours<\/strong>";
+   strVar += "     <\/li>";
+   return strVar;
 }
 
 $(document).on('ready',function(){
