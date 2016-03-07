@@ -49,6 +49,16 @@ function htmlTimeTable(app,timeLeft){
     return strVar;
 }
 
+function htmlTimeTableHour(app,timeLeft,minutes){
+    var strVar="";
+    strVar += "     <li class=\"list-group-item\">";
+    strVar += "          <img class=\"pull-left\" src=\"https:\/\/weighmytruck.com\/img\/icon-app.png\">";
+    strVar += "          "+app;
+    strVar += "          <strong class=\"pull-right\" style='color:"+urgency(minutes)+"'>"+timeLeft+"<\/strong>";
+    strVar += "     <\/li>";
+    return strVar;
+}
+
 function buildTimeList(container){
    var table = timeTable(55); //arbitrarily chosing 85% battery level
    for(key in table){
@@ -56,10 +66,40 @@ function buildTimeList(container){
    }
 }
 
+function timeConvert(n){
+    var minutes = n%60 ;
+    var hours = (n - minutes) / 60 ;
+    return (hours + ":" + minutes);
+}
+
+function buildTimeListHours(container){
+   var table = timeTable(55); //arbitrarily chosing 85% battery level
+   for(key in table){
+     var minutes = table[key];
+     table[key] = timeConvert(table[key]);
+     container.append(htmlTimeTableHour(key,table[key],minutes));
+   }
+}
+
+function timeFormatButtonListeners(){
+    $('body').on('click', ".btn-primary", function(){
+        container = $('.list-group');
+        container.html('');
+        buildTimeList(container);
+    });
+
+    $('body').on('click',".btn-secondary", function(){
+        container = $('.list-group');
+        container.html('');
+        buildTimeListHours(container);
+    });
+}
+
 $(document).on('ready',function(){
     if($('.list-group').length > 0){
         container = $('.list-group');
         container.html('');
         buildTimeList(container);
+        timeFormatButtonListeners()
     }
 });
