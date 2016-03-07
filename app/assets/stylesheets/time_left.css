@@ -1,0 +1,24 @@
+.time-left{
+  background-color: #5a5c51;
+}
+
+.time-left .page-header{
+     text-align: center;
+      color: white;
+}
+
+.time-left .btn-group{
+    left: 44%;
+    margin-bottom: 2%;
+}
+
+.time-left .list-group{
+  text-align:center;
+}
+
+.time-left .list-group-item{
+  text-align:center;
+  height: 70px;
+  font-size: 30px;
+  color: #5a5c51;
+}
