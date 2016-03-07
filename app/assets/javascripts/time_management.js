@@ -41,7 +41,7 @@ function timeTable(batteryLevel){
 
 function htmlTimeTable(app,timeLeft){
     var strVar="";
-    strVar += "     <li class=\"list-group-item\">";
+    strVar += "     <li class=\"list-group-item time-left-group\">";
     strVar += "          <img class=\"pull-left\" src=\"https:\/\/weighmytruck.com\/img\/icon-app.png\">";
     strVar += "          "+app;
     strVar += "          <strong class=\"pull-right\" style='color:"+urgency(timeLeft)+"'>"+timeLeft+" minutes<\/strong>";
@@ -96,8 +96,8 @@ function timeFormatButtonListeners(){
 }
 
 $(document).on('ready',function(){
-    if($('.list-group').length > 0){
-        container = $('.list-group');
+    if($('.time-left-group').length > 0){
+        container = $('.time-left-group');
         container.html('');
         buildTimeList(container);
         timeFormatButtonListeners()
