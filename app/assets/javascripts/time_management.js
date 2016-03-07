@@ -66,6 +66,7 @@ function htmlTimeTable(app,timeLeft){
    var strVar="";
    strVar += "     <li class=\"list-group-item time-left-item\">";
    strVar += "          <i class='pull-left "+iconClass+"' ></i>";
+   strVar += "          "+app;
    strVar += "          <strong class=\"pull-right\" style='color:"+urgency(timeLeft)+"'>"+timeLeft+" minutes<\/strong>";
    strVar += "     <\/li>";
    return strVar;
@@ -83,10 +84,47 @@ function htmlTimeTableHour(app,timeLeft,minutes){
    return strVar;
 }
 
+function buildTimeList(container){
+   var table = timeTable(55); //arbitrarily chosing 85% battery level
+   for(key in table){
+     container.append(htmlTimeTable(key,table[key]));
+   }
+}
+
+function timeConvert(n){
+    var minutes = n%60 ;
+    var hours = (n - minutes) / 60 ;
+    return (hours + ":" + minutes);
+}
+
+function buildTimeListHours(container){
+   var table = timeTable(55); //arbitrarily chosing 85% battery level
+   for(key in table){
+     var minutes = table[key];
+     table[key] = timeConvert(table[key]);
+     container.append(htmlTimeTableHour(key,table[key],minutes));
+   }
+}
+
+function timeFormatButtonListeners(){
+    $('body').on('click', ".btn-primary", function(){
+        container = $('.time-left-group');
+        container.html('');
+        buildTimeList(container);
+    });
+
+    $('body').on('click',".btn-secondary", function(){
+        container = $('.time-left-group');
+        container.html('');
+        buildTimeListHours(container);
+    });
+}
+
 $(document).on('ready',function(){
     if($('.time-left-group').length > 0){
         container = $('.time-left-group');
         container.html('');
         buildTimeList(container);
+        timeFormatButtonListeners()
     }
 });

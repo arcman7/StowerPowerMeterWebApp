@@ -1,5 +1,5 @@
 .time-left{
-  background-color: #5a5c51;
+  background-color: #333;
 }
 
 .time-left .page-header{
@@ -20,5 +20,6 @@
   text-align:center;
   height: 70px;
   font-size: 30px;
-  color: #5a5c51;
+  color: #333;
+  background-color: #CECECE;
 }
