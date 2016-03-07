@@ -41,7 +41,7 @@ function timeTable(batteryLevel){
 
 function htmlTimeTable(app,timeLeft){
     var strVar="";
-    strVar += "     <li class=\"list-group-item time-left-group\">";
+    strVar += "     <li class=\"list-group-item time-left-item\">";
     strVar += "          <img class=\"pull-left\" src=\"https:\/\/weighmytruck.com\/img\/icon-app.png\">";
     strVar += "          "+app;
     strVar += "          <strong class=\"pull-right\" style='color:"+urgency(timeLeft)+"'>"+timeLeft+" minutes<\/strong>";
@@ -51,7 +51,7 @@ function htmlTimeTable(app,timeLeft){
 
 function htmlTimeTableHour(app,timeLeft,minutes){
     var strVar="";
-    strVar += "     <li class=\"list-group-item\">";
+    strVar += "     <li class=\"list-group-item time-left-item\">";
     strVar += "          <img class=\"pull-left\" src=\"https:\/\/weighmytruck.com\/img\/icon-app.png\">";
     strVar += "          "+app;
     strVar += "          <strong class=\"pull-right\" style='color:"+urgency(minutes)+"'>"+timeLeft+"<\/strong>";
@@ -83,13 +83,13 @@ function buildTimeListHours(container){
 
 function timeFormatButtonListeners(){
     $('body').on('click', ".btn-primary", function(){
-        container = $('.list-group');
+        container = $('.time-left-group');
         container.html('');
         buildTimeList(container);
     });
 
     $('body').on('click',".btn-secondary", function(){
-        container = $('.list-group');
+        container = $('.time-left-group');
         container.html('');
         buildTimeListHours(container);
     });
